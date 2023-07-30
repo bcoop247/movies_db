@@ -3,12 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coop's Critics</title>
+  <title>Welcome to Coop's Critics</title>
 </head>
 <body>
-  <h3> Welcome to Coop's Critics </h3>
+  <h1> All Movies </h1>
   
-  <h2>Leave a Review!</h2>
+  <ul>
+    <% movies.forEach(movie => { %>
+        <li> <a href="movie_page/<%=movie.id%>"><%= movie.movie %> </a> </li>
+    <% }) %>
+  </ul>
   
 </body>
 </html>

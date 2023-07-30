@@ -11,15 +11,19 @@ app.get('/', (req, res) => {
   res.render('index', {text: 'world'});
 })
 
-const moviesRouter = require('./routes/movies');
+const moviePageRouter = require('./routes/movie_page');
+// const moviesRouter = require('./routes/movies');
 const homeRouter = require('./routes/home');
 const loginRouter = require('./routes/login');
 const newUserRouter = require('./routes/newuser');
+const newReviewRouter = require('./routes/new_review');
 
-app.use('/movies', moviesRouter); // Parent route for /movies URL path.
+app.use('/movie_page', moviePageRouter);
+// app.use('/movies', moviesRouter);
 app.use('/home', homeRouter);
 app.use('/login', loginRouter);
 app.use('/newuser', newUserRouter);
+app.use('/new_review', newReviewRouter);
 
 app.listen(3000, () => {
   console.log('Listening on port 3000.')

@@ -22,3 +22,11 @@ VALUES
 ('Matt', 'Damon', '1970-08-10', 'American'),
 ('Lin', 'Shaye', '1943-10-12', 'American')
 ;
+
+INSERT INTO actors (first_name, last_name, birth_date, nationality)
+VALUES 
+('Vince', 'Vaugh', '1970-03-28', 'American'),
+('Owen', 'Wilson', '1968-11-18', 'American'),
+('Tom', 'Hardy', '1977-09-15', 'British');
+
+

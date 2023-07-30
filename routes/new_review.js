@@ -11,14 +11,15 @@ const dbConfig = {
 };
 const db = pgp(dbConfig);
 
-router.get('/', async (req, res) => {
-  await db.any(`SELECT * FROM movies;`)
-  .then((data) => {
-    res.render('home', { movies: data });
-  }).catch((error) => {
-    console.log('ERROR', error);
-  })
+router.get('/:id', (req, res) => {
   
+  res.render('new_review');
+})
+
+router.post('/:id', (req, res) => {
+  const { userReview } = req.body;
+  console.log(userReview);
+  res.redirect('home');
 })
 
 module.exports = router;

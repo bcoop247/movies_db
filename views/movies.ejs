@@ -7,11 +7,13 @@
 </head>
 <body>
   <h2>Movies</h2>
+  <!-- We are selecting the data to display from within "/routes/movies.js" -->
   <ul>
     <% movies.forEach(movie => { %>
         <li>Movie: <a href="movies/<%=movie.id%>"><%= movie.movie %></a></li>
     <% }) %>
-</ul>
+  </ul>
+
   
 </body>
 </html>
