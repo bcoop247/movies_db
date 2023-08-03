@@ -16,14 +16,14 @@ const moviePageRouter = require('./routes/movie_page');
 const homeRouter = require('./routes/home');
 const loginRouter = require('./routes/login');
 const newUserRouter = require('./routes/newuser');
-const newReviewRouter = require('./routes/new_review');
+// const newReviewRouter = require('./routes/new_review');
 
 app.use('/movie_page', moviePageRouter);
 // app.use('/movies', moviesRouter);
 app.use('/home', homeRouter);
 app.use('/login', loginRouter);
 app.use('/newuser', newUserRouter);
-app.use('/new_review', newReviewRouter);
+// app.use('/new_review', newReviewRouter);
 
 app.listen(3000, () => {
   console.log('Listening on port 3000.')

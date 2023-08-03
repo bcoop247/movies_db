@@ -11,7 +11,7 @@ const dbConfig = {
   password: 'pass'
 };
 const db = pgp(dbConfig);
-router.use(express.urlencoded({ extended: true })); // I am not exactly sure how this middle ware works??
+router.use(express.urlencoded({ extended: true })); 
 
 //render the login form. 
 router.get('/', (req, res) => {

@@ -4,20 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Actors </title>
+  
 </head>
 <body>
 
   <h1> <%= movie.title %> <%= movie.rating %> / 10 </h1>
 
     <p>Cast: </p>
-    <p> <% actors.forEach(actor => { %>
-    <%= actor.first_name + ' ' + actor.last_name %>
-    <% }) %> </p>
 
-    <h3>Unleash your critique: </h3>
+    <ul> <% actors.forEach(actor => { %> <li> <%= actor.first_name + ' ' + actor.last_name %> <% }) %> </li> </ul>
 
-    <button onclick="redirectToReviewPage()"> Leave review </button>
-    
-<script>const redirectToReviewPage = () => { window.location.href='/new_review';}</script>
+    <h6> <% reviews.forEach(review => { %> <%= review.review_text %> <% }) %> </h6>
+
+    <h3>Unleash your critique: <a href = "new_review/<%=movie.id%>"> Leave Review </a> </h3>
+
 </body>
 </html>
