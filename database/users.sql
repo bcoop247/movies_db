@@ -13,3 +13,4 @@ CREATE TABLE users (
 INSERT INTO users(username, email, password, first_name, last_name, birthdate)
 VALUES
 ('bcoop247', 'brc90@protonmail.com', 'pass', 'Brandon', 'Cooper', '1990-03-08');
+

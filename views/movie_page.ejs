@@ -4,19 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title> Actors </title>
+  <style>body{background-color: #706f6d; text-align: center;} ul{list-style-type: none;}</style>
   
 </head>
 <body>
 
   <h1> <%= movie.title %> <%= movie.rating %> / 10 </h1>
 
-    <p>Cast: </p>
+    <h3>Starring: </h3>
 
     <ul> <% actors.forEach(actor => { %> <li> <%= actor.first_name + ' ' + actor.last_name %> <% }) %> </li> </ul>
 
-    <h6> <% reviews.forEach(review => { %> <%= review.review_text %> <% }) %> </h6>
+    <h3> Critic Reviews: </h3>
+    <ul> <% reviews.forEach(review => { %>  <li> <%= review.review_text %>  <% }) %> </li> <a href="delete/<%=movie.id%>"> Delete </a> </ul>
 
-    <h3>Unleash your critique: <a href = "new_review/<%=movie.id%>"> Leave Review </a> </h3>
+    <h3> <a href = "new_review/<%=movie.id%>"> Leave a Review </a> </h3>
 
 </body>
 </html>

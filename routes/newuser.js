@@ -3,6 +3,7 @@ const router = express.Router();
 const pgp = require("pg-promise")(/*options*/);
 const bcrypt = require('bcrypt');
 const session = require('express-session');
+const app = express;
 
 const dbConfig = {
   host: 'localhost',
@@ -11,6 +12,7 @@ const dbConfig = {
   user: 'brandoncooper',
   password: 'pass'
 };
+
 
 const db = pgp(dbConfig);
 router.use(express.urlencoded({ extended: true }));
@@ -28,7 +30,7 @@ router.post('/', (req, res) => {
     db.query(`INSERT INTO users(first_name, last_name, email, username, password) VALUES ($1, $2, $3, $4, $5)`, 
     [first_name, last_name, email, username, hashedpassword])
     .then((data) => {
-      req.session.username = username;
+      
       res.send(
         `<script>
           const user = "${username}";

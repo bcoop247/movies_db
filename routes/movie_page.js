@@ -18,7 +18,7 @@ router.get('/:id', async (req, res) => {
   
   try{
   const dataSetOne = await db.query(`
-  SELECT  a.first_name, a.last_name, m.movie, m.rating, m.id
+  SELECT  a.first_name, a.last_name, m.movie, m.rating, m.id, m.genre
   FROM actors as a
   JOIN movies_actors as ma ON actor_id = a.id
   JOIN movies as m ON movie_id = m.id
@@ -57,6 +57,15 @@ router.post('/new_review/:id', async (req, res) => {
   .catch((error) => {res.status(error).send('ERROR POSTING')});
 
 })
+
+router.get('/delete/:id', async (req, res) => {
+  const id = req.params.id;
+  await db.query(`DELETE FROM movie_reviews WHERE movie_id = $1`, id)
+  .then(res.send(`delete success <a href ="/movie_page/${id}"> Back </a>`))
+  .catch((error) => {res.status(error).send('error deleting')});
+
+})
+
 
 module.exports = router;
 
